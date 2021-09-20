@@ -33,6 +33,7 @@ func main() {
 
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
+		// Uh... This is possibly race condition.
 		products = []Product{
 			{
 				Name: "リンゴ",
