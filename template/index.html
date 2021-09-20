@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% import "banners.html" %}
+{% macro Title %}釣りタイトル{% end %}
+{% macro Body %}
+    <p>商品一覧</p>
+    <ul>
+      {% for product in products %}
+      <li><a href="{{ product.URL }}">{{ product.Name }}</a></li>
+      {% end %}
+    </ul>
+    {{ Banner() }}
+{% end %}
